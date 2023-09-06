@@ -20,6 +20,12 @@
         "ensureFile 'hmcl.json'"
     ],
     "bin": "HMCL.exe",
+    "shortcuts": [
+        [
+            "HMCL.exe",
+            "HMCL"
+        ]
+    ],
     "persist": [
         "hmcl.json",
         ".minecraft"
