@@ -1,0 +1,40 @@
+{
+    "version": "0.6.5",
+    "description": "SmartDNS-rs 🐋 is a local DNS server imspired by C SmartDNS to accepts DNS query requests from local clients, obtains DNS query results from multiple upstream DNS servers, and returns the fastest access results to clients. Avoiding DNS pollution and improving network access speed, supports high-performance ad filtering.",
+    "homepage": "https://github.com/mokeyish/smartdns-rs",
+    "license": "GPL-3.0-only",
+    "notes": "It is still under development, please do not use it in production environment, welcome to try and provide feedback.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/0.6.5/smartdns-x86_64-pc-windows-gnu.zip"
+        }
+    },
+    "pre_install": "",
+    "installer": {
+        "script": ""
+    },
+    "post_install": [
+        "",
+        ""
+    ],
+    "uninstaller": {
+        "script": ""
+    },
+    "bin": "",
+    "env_add_path": [
+        "",
+        ""
+    ],
+    "persist": [
+        "",
+        ""
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/mokeyish/smartdns-rs/releases/download/$version/smartdns-x86_64-pc-windows-gnu.zip"
+            }
+        }
+    }
+}
