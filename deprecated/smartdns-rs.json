@@ -6,7 +6,8 @@
     "notes": "It is still under development, please do not use it in production environment, welcome to try and provide feedback.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/0.6.5/smartdns-x86_64-pc-windows-gnu.zip"
+            "url": "https://github.com/mokeyish/smartdns-rs/releases/download/0.6.5/smartdns-x86_64-pc-windows-gnu.zip",
+            "hash": ""
         }
     },
     "pre_install": "",
@@ -21,10 +22,6 @@
         "script": ""
     },
     "bin": "",
-    "env_add_path": [
-        "",
-        ""
-    ],
     "persist": [
         "",
         ""
