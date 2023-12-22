@@ -12,8 +12,8 @@
     "extract_dir": "mpv-lazy",
     "shortcuts": [
         [
-            "mpv-lazy.exe",
-            "mpv"
+            "mpv.exe",
+            "mpv-lazy"
         ]
     ],
     "checkver": {
