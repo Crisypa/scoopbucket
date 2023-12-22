@@ -1,0 +1,30 @@
+{
+    "version": "20231101",
+    "description": "mpv 懒人包 win10 x64 config",
+    "homepage": "https://github.com/hooke007/MPV_lazy",
+    "license": "Unlicense",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/hooke007/MPV_lazy/releases/download/20231101/mpv-lazy-20231101.exe#/dl.7z",
+            "hash": "0e690eeaca5bde92fa6494701d81ba31b674f78b8a3fc21feecb5f40e78ce259"
+        }
+    },
+    "extract_dir": "mpv-lazy",
+    "shortcuts": [
+        [
+            "mpv-lazy.exe",
+            "mpv"
+        ]
+    ],
+    "checkver": {
+        "url": "https://github.com/hooke007/MPV_lazy/releases.atom",
+        "regex": "/releases/tag/([\\d]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/hooke007/MPV_lazy/releases/download/$version/mpv-lazy-$version.exe#/dl.7z"
+            }
+        }
+    }
+}
