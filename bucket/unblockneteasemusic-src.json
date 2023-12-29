@@ -10,12 +10,6 @@
     "suggest": {
         "NodeJS": "nodejs-lts"
     },
-    "bin": [
-        [
-            "app.js",
-            "unblockneteasemusic.js"
-        ]
-    ],
     "checkver": {
         "url": "https://api.github.com/repos/UnblockNeteaseMusic/server/releases/latest",
         "jsonpath": "$.tag_name",
