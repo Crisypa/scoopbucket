@@ -13,6 +13,27 @@
             "hash": "md5:cb3e2b791c08c507d711f57b9085cbe1"
         }
     },
+    "shortcuts": [
+        [
+            "bin/OMEdit.exe",
+            "OpenModelica/Connection Editor"
+        ],
+        [
+            "bin/OMNotebook.exe",
+            "OpenModelica/Notebook"
+        ],
+        [
+            "bin/OMOptim.exe",
+            "OpenModelica/Optimization Editor"
+        ],
+        [
+            "bin/OMShell.exe",
+            "OpenModelica/Shell"
+        ]
+    ],
+    "env_set": {
+        "OPENMODELICAHOME": "$dir"
+    },
     "checkver": {
         "url": "https://api.github.com/repos/OpenModelica/OpenModelica/releases",
         "regex": "/releases/tag/v(?<version>(?<major>[0-9]+.[0-9]+).(?<minor>[0-9]+))\""
