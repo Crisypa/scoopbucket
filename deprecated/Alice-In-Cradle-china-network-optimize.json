@@ -6,7 +6,11 @@
         "identifier": "Unknown",
         "url": "https://docs.nanamehacha.dev/en/alice_in_cradle/license"
     },
-    "##": "not sure if the url will change",
+    "##": [
+        "not sure if the url will change",
+        "and it seems redirect to WoPan (https://pan.wo.cn/)",
+        "this have violated ToS of WoPan"
+    ],
     "notes": [
         "Please turn on \"SFW Mode\" if you are under 18 years old or plan to upload/stream videos of this game to online services.",
         "若您未满18岁或计划将此游戏的视频上传/流式传输到在线服务，请打开“超健全模式”",
