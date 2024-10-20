@@ -5,7 +5,9 @@
     "license": "MIT",
     "notes": [
         "Add VSCodium as a context menu option by running 'reg import \"$dir\\install-context.reg\"'",
-        "For file associations, run 'reg import \"$dir\\install-associations.reg\"'"
+        "For file associations, run 'reg import \"$dir\\install-associations.reg\"'",
+        "although I have add some patches,there are still some extensions can't work",
+        "in this case,you should use Proprietary Microsoft-branded release Visual Studio Code"
     ],
     "architecture": {
         "64bit": {
@@ -25,12 +27,8 @@
         "        Get-Content -Path $product_path | Where-Object {$_ -notmatch \"updateurl\"} | Set-Content temp.json",
         "        Move-Item -Path temp.json -Destination $product_path -Force",
         "    }",
-        "}",
-        "$old_product = Get-Content -Path $product_path -Raw -Encoding UTF8 | ConvertFrom-Json",
-        "$old_product.extensionsGallery = @{serviceUrl='https://marketplace.visualstudio.com/_apis/public/gallery';cacheUrl='https://vscode.blob.core.windows.net/gallery/index';itemUrl='https://marketplace.visualstudio.com/items'}",
-        "$old_product | ConvertTo-Json -Depth 10 | Out-File -FilePath $product_path"
+        "}"
     ],
-    "##": "above 3 lines add support for Microsoft Visual Studio Code Marketplace",
     "post_install": [
         "$dirpath = \"$dir\".Replace('\\', '\\\\')",
         "$exepath = \"$dir\\VSCodium.exe\".Replace('\\', '\\\\')",
@@ -58,7 +56,18 @@
         "if ((Test-Path \"$extensions_file\")) {",
         "    info 'Adjusting path in extensions file...'",
         "    (Get-Content \"$extensions_file\") -replace '(?<=vscodium(/|\\\\\\\\)).*?(?=(/|\\\\\\\\)data(/|\\\\\\\\)extensions)', $version | Set-Content \"$extensions_file\"",
-        "}"
+        "}",
+        "$product_path = \"$dir\\resources\\app\\product.json\"",
+        "$old_product = Get-Content -Path $product_path -Raw -Encoding UTF8 | ConvertFrom-Json",
+        "$old_product.extensionsGallery = @{serviceUrl='https://marketplace.visualstudio.com/_apis/public/gallery';cacheUrl='https://vscode.blob.core.windows.net/gallery/index';itemUrl='https://marketplace.visualstudio.com/items'}",
+        "$patch = Invoke-WebRequest 'https://github.com/crisipa/scoopbucket/raw/refs/heads/master/patches/vscodium/functions.json' | ConvertFrom-Json -AsHashtable",
+        "foreach ($Key in $patch.Keys) {Add-Member -Force -InputObject $old_product -MemberType NoteProperty -Name $Key -Value $patch.$Key}",
+        "$old_product | ConvertTo-Json -Depth 10 | Out-File -FilePath $product_path"
+    ],
+    "##": [
+        "above 6 lines add support for Microsoft Visual Studio Code Marketplace and unblock some features for vscodium",
+        "patches from https://aur.archlinux.org/packages/vscodium-bin-marketplace",
+        "and https://aur.archlinux.org/packages/vscodium-bin-features"
     ],
     "env_add_path": "bin",
     "bin": [
