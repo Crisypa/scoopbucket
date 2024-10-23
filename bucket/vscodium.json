@@ -60,7 +60,7 @@
         "$product_path = \"$dir\\resources\\app\\product.json\"",
         "$old_product = Get-Content -Path $product_path -Raw -Encoding UTF8 | ConvertFrom-Json",
         "$old_product.extensionsGallery = @{serviceUrl='https://marketplace.visualstudio.com/_apis/public/gallery';cacheUrl='https://vscode.blob.core.windows.net/gallery/index';itemUrl='https://marketplace.visualstudio.com/items'}",
-        "$patch = Invoke-WebRequest 'https://github.com/crisipa/scoopbucket/raw/refs/heads/master/patches/vscodium/functions.json' | ConvertFrom-Json -AsHashtable",
+        "$patch = Invoke-WebRequest 'https://github.com/crisipa/scoopbucket/raw/refs/heads/master/scripts/vscodium/functions.json' | ConvertFrom-Json -AsHashtable",
         "foreach ($Key in $patch.Keys) {Add-Member -Force -InputObject $old_product -MemberType NoteProperty -Name $Key -Value $patch.$Key}",
         "$old_product | ConvertTo-Json -Depth 10 | Out-File -FilePath $product_path"
     ],
