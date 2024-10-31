@@ -2,6 +2,10 @@
 
 [![Excavator](https://github.com/crisipa/scoopbucket/actions/workflows/ci.yml/badge.svg)](https://github.com/crisipa/scoopbucket/actions/workflows/ci.yml)
 
+## How do I install these manifests?
+
+To add this bucket, run `scoop bucket add crisipa/scoopbucket https://github.com/crisipa/scoopbucket`. To install, do `scoop install <manifest>`.
+
 ## Application Lists
 
 | Name | Info |
@@ -14,9 +18,9 @@
 | Degrees of Lewdity | with ModLoader |
 | dex2jar | - |
 | electron | - |
-| gopeed | 2 variants |
+| gopeed | removed |
 | hmcl | stable/dev versions |
-| hysteria | 1/2 versions |
+| hysteria | removed |
 | ipfs companion | chromium extension |
 | kikoplay | - |
 | lav-filter | - |
@@ -30,22 +34,19 @@
 | sc-thanslator | chromium extension |
 | scilab | - |
 | seam | CLI/GUI |
+| serve-d | - |
 | sing-box | only preview version |
 | smartdns | rust version,not c |
 | smartproxy | chromium extension |
-| subconverter | - |
-| thorium | - |
+| subconverter | removed |
+| thorium | removed |
 | ublock origin | browser extension |
 | unblockneteasemusic | - |
 | violentmonkey | chromium extension |
 | vscodium | with Marketplace support |
+| webBenchmark | - |
 | xcaddy | - |
 | xmcl | - |
-
-
-## How do I install these manifests?
-
-To add this bucket, run `scoop bucket add crisipa/scoopbucket https://github.com/crisipa/scoopbucket`. To install, do `scoop install <manifest>`.
 
 ## How do I contribute new manifests?
 
